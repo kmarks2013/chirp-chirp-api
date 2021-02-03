@@ -10,5 +10,6 @@ class User < ApplicationRecord
 
     # password validations
     has_secure_password
+    validates :password, :length => { :minimum => 6 }
 
 end

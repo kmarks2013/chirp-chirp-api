@@ -5,7 +5,7 @@ class AuthController < ApplicationController
         # add a way to log in with email as well
         is_authenticated = user.authenticate(params[:password])
         if is_authenticated
-            render json: user
+            render json: {token: encode_token(user_payload(user))}
         else
             render json: {error: "Wrong username/password. Please try Again"}
         end

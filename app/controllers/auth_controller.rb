@@ -6,7 +6,7 @@ class AuthController < ApplicationController
         is_authenticated = user.authenticate(params[:password])
         if is_authenticated
             payload = {user_id: user.id}
-            token = JWT.encode(payload, nil, 'HS256')
+            token = JWT.encode(payload, 'examplesecretkey', 'HS256')
             render json: {token: token}
         else
             render json: {error: "Wrong username/password. Please try Again"}

@@ -9,6 +9,10 @@ class User < ApplicationRecord
     validates :username, :length => { :in => 5..30}
 
     # password validations
+    PASSWORD_FORMAT = /\A
+        (?=.*[A-Z]) # Must contain an uppercase character
+    /x
+
     has_secure_password
     validates :password, :length => { :minimum => 6 }
 

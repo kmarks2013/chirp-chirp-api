@@ -8,4 +8,8 @@ class ApplicationController < ActionController::API
         ENV["JWT_SECRET_KEY"]
     end
 
+    def encode_token(payload)
+        JWT.encode(payload, hmac_secret, ‘HS256’)
+    end
+
 end

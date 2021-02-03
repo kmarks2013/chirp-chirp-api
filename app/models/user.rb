@@ -13,6 +13,7 @@ class User < ApplicationRecord
         (?=.*[A-Z]) # Must contain an uppercase character
         (?=.*[a-z]) # Must contain a lowercase character
         (?=.*\d) # Must contain a digit
+        (?=.*[[:^alnum:]]) # Must contain a symbol
     /x
 
     has_secure_password

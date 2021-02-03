@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     # email validations
-    # username validations
+    validates_presence_of :email
 
 
     # password validations

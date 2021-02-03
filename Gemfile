@@ -44,3 +44,5 @@ gem 'active_model_serializers'
 gem 'dotenv-rails'
 
 gem 'activerecord-reset-pk-sequence'
+
+gem 'jwt'

@@ -12,6 +12,7 @@ class User < ApplicationRecord
     PASSWORD_FORMAT = /\A
         (?=.*[A-Z]) # Must contain an uppercase character
         (?=.*[a-z]) # Must contain a lowercase character
+        (?=.*\d) # Must contain a digit
     /x
 
     has_secure_password
